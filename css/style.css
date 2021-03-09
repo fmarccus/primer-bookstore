@@ -1,0 +1,42 @@
+/*#myInput {
+   background-color: rgb(255, 255, 255);
+   border-width: 2px;
+   border-color: #5593da;
+   border-radius: 8px;
+}*/
+
+#brand {
+    
+    color:    #25476D;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    
+}
+
+#icon_logo {
+  color: #25476D;
+}
+.title {
+    
+    height: 100px;
+}
+.background-feedback {
+    background-image: url('/images/bg-feedback.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.divider {
+    font-weight: bold;
+}
+
+.card {
+    border-radius: 15px;
+    border-color: #fff;
+}
+
+
