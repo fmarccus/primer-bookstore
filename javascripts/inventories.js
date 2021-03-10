@@ -4,9 +4,10 @@ const datatable = $("#datatable");//id for tbody
 //retrieves documents
 function render(doc) {
     datatable.append(`<tr id="${doc.id}">
-    <td><a class="btn btn-sm btn-warning" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
+    <td><a class="btn btn-sm btn-light" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().title}</td>
+    <td>${doc.data().author}</td>
     <td>${doc.data().isbn}</td>
     <td>${doc.data().genre}</td>
     <td>${doc.data().publication_date}</td>
@@ -38,6 +39,7 @@ function render(doc) {
         var id = e.target.id;
         db.collection('inventories').doc(id).get().then(doc => {
             $('#title').val(doc.data().title);
+            $('#author').val(doc.data().author);
             $('#isbn').val(doc.data().isbn);
             $('#genre').val(doc.data().genre);
             $('#publication_date').val(doc.data().publication_date);
@@ -54,6 +56,7 @@ $('#update').on('click', () => {
     var id = $('#document').val();
     db.collection('inventories').doc(id).set({
         title: $("#title").val(),
+        author: $("#author").val(),
         isbn: $("#isbn").val(),
         genre: $("#genre").val(),
         publication_date: $("#publication_date").val(),
@@ -66,6 +69,7 @@ $('#update').on('click', () => {
         merge: true
     })
     $("#title").val("");
+    $("#author").val("");
     $("#isbn").val("");
     $("#genre").val("");
     $("#publication_date").val("");
@@ -85,7 +89,7 @@ $('#update').on('click', () => {
 
 
 //real time rendering of data
-db.collection('inventories').orderBy('total').onSnapshot(snapshot => {
+db.collection('inventories').orderBy('title').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == "added") {

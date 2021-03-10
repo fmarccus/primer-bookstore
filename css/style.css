@@ -1,9 +1,11 @@
-/*#myInput {
-   background-color: rgb(255, 255, 255);
-   border-width: 2px;
-   border-color: #5593da;
-   border-radius: 8px;
-}*/
+#employees, #orders, #inventory, #analytics, #pos, #sales, #tasks, #feedbacks, #published {
+    font-size: 14px;
+}
+
+
+.form-control {
+    font-size: 14px;
+}
 
 #brand {
     
@@ -33,10 +35,32 @@
 .divider {
     font-weight: bold;
 }
-
-.card {
-    border-radius: 15px;
-    border-color: #fff;
+a {
+    text-decoration: none !important
 }
+/* dark blue theme natin para match*/
+.btn-create {
+    background-color: #25476D;
+    color: #ffffff;
+} .btn-create:hover {
+    background-color: #25476D;
+    color: rgb(196, 203, 218);
+}
+/* for SELECT buttons in tables*/
+.btn-light {
+    background-color: #e6ecf5;
+    color: black;
+} .btn-light:hover {
+    background-color: #e6ecf5;
+    color: rgb(67, 66, 66);
+}
+
+/*EMPLOYEES for individual TD colors*/
+.lastname {
+    background-color:test;
+    color:fff;
+}
+
+
 
 

@@ -22,7 +22,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
-    <link rel="stylesheet" href="/css/flatly.css">
+
     <link rel="stylesheet" href="/css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -35,68 +35,53 @@
 
 </head>
 
-<body>
+<body id="orders">
+    <!--Top bar-->
     <section>
-        <ul class="nav justify-content-end" style="background-color: #25476D;">
-            <li class="nav-item mr-auto">
+        <ul class="nav justify-content-end fixed-top" style="background-color: #25476D;">
+            <li class="nav-item me-auto">
                 <button class="uk-button uk-button-light" style="background-color: #25476D;" type="button"
                     uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
-                        style="color:rgb(255, 255, 255); max-width: 15px;"></i></button>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="/miscellaneous/about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="/miscellaneous/stores.html">Stores</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="/miscellaneous/faqs.html">FAQs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="/miscellaneous/privacy.html">Privacy Policies</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="/miscellaneous/contactus.html">Contact Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-secondary" href="/miscellaneous/testimonials.html">Testimonials</a>
+                        style="color:#ffffff; max-width: 15px;"></i></button>
             </li>
         </ul>
     </section>
     <!--top bar-->
 
     <!--Side Bar-->
-    <section>
+    <section class="mt-5">
         <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay:true">
-            <div class="uk-offcanvas-bar" style="background-color: #32527B;">
+            <div class="uk-offcanvas-bar" style="background-color: #25476D;">
                 <ul class="uk-nav uk-nav-default">
                     <br><br>
-                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fab fa-pinterest me-2"
-                            id="icon_logo"></i> Primer Bookstore</li>
-
+                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fab fa-pinterest me-2" id=""></i>
+                        Primer Bookstore</li>
                     <br>
-                    <li><a href="admin.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                    <li><a href="admin.html" class="uk-margin-small-right" style="font-size: 14px; color: white;"><i
                                 class="fas fa-home me-3"></i>Home</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 14px; color: white;"><i
                                 class="fas fa-users me-3 text-light"></i>Manage
                             Employees</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 14px; color: white;"><i
                                 class="fas fa-shopping-cart me-3 text-light"></i>Pending
                             Orders</a></li>
                     <li class="uk-nav-divider"></li>
                     <li><a href="inventories.html" class="uk-margin-small-right"
-                            style="font-size: 16px; color: white;"><i
+                            style="font-size: 14px; color: white;"><i
                                 class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                    <li><a href="analytics.html" class="uk-margin-small-right" style="font-size: 14px; color: white;"><i
+                                class="fas fa-chart-bar me-3 text-light"></i>Sales Analysis Report</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 14px; color: white;"><i
                                 class="fas fa-dollar-sign me-4 text-light"></i>Point of Sales</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="sales.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                    <li><a href="sales.html" class="uk-margin-small-right" style="font-size: 14px; color: white;"><i
                                 class="fas fa-history me-3 text-light"></i>Sales History</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 14px; color: white;"><i
                                 class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
                     <li class="uk-nav-divider"></li>
                     <li class="uk-parent"> Feedbacks
@@ -110,131 +95,254 @@
                                     Feedbacks</a></li>
                         </ul>
                     </li>
-                    <li class="uk-nav-divider"></li>
                 </ul>
             </div>
         </div>
     </section>
     <!--End of Side Bar-->
 
-    <!-- Title bar -->
-    <section>
-        <nav class="navbar">
-            <a href="admin.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
-                    id="icon_logo"></i>PRIMER BOOKSTORE</a>
-        </nav>
+    <section class="mt-3">
+        <div class="container">
+            <br>
+            <a href="admin.html" id="brand" style="text-decoration: none;"><i class="fas fa-shopping-cart me-2 ml-5"
+                    id="icon_logos"></i>PENDING ORDERS</a>
+        </div>
     </section>
     <!-- End of Title bar -->
-    <div class="row">
-        <div class="col-md-3">
-            <section class="mt-3">
-                <div class="container-fluid">
-                    <!--Create Order-->
-                    <form id="formdata" method="post">
-                        <p><strong>Book Details</strong></p>
-                        <input type="text" name="title" id="title" placeholder="title">
-                        <br>
-                        <input type="text" name="isbn" id="isbn" placeholder="isbn">
-                        <br>
-                        <select class="" id="genre">
-                            <option value="Adventure">Adventure</option>
-                            <option value="Fantasy">Fantasy</option>
-                            <option value="Historical Fiction">Historical Fiction</option>
-                            <option value="Literary Fiction">Literary Fiction</option>
-                            <option value="Motivational/Inspirational">Motivational/Inspirational</option>
-                            <option value="Romance">Romance</option>
-                            <option value="Science Fiction">Science Fiction</option>
-                            <option value="Others">Others</option>
-                        </select>
-                        <br>
-                        <input type="date" name="publication_date" id="publication_date">
-                        <br>
-                        <select class="" id="book_size">
-                            <option value="Quarto">Quarto</option>
-                            <option value="Octavo">Octavo</option>
-                            <option value="Duodecimo">Duodecimo</option>
-                            <option value="Sextodecimo">Sextodecimo</option>
-                        </select>
-                        <br>
-                        <p><strong>Pricing</strong></p>
-                        <input type="number" name="amount" id="amount" placeholder="amount" step="0.01">
-                        <br>
-                        <input type="number" name="quantity" id="quantity" placeholder="quantity" step="1">
-                        <br>
-                        <input type="hidden" name="total" id="total" placeholder="total">
-                        <input type="hidden" name="selling_price" id="selling_price" placeholder="selling_price">
-                        <input type="number" name="interest" id="interest" placeholder="interest(decimal)" step="0.01">
-                        <br>
-                        <input type="hidden" name="available" id="available" placeholder="available">
-                        <input type="hidden" name="projected_profit" id="projected_profit"
-                            placeholder="projected_profit">
-                        <input type="hidden" name="document" id="document" placeholder="document">
-                        <p><strong>Contact Person</strong></p>
-                        <input type="text" name="supplier" id="supplier" placeholder="supplier" class="">
-                        <br>
-                        <input type="text" name="contact" id="contact" placeholder="contact">
-                        <br>
-                        <p><strong>Deliver To</strong></p>
-                        <select class="" id="delivery_address">
-                            <option value="store1">store1</option>
-                            <option value="store2">store2</option>
-                            <option value="store3">store3</option>
-                            <option value="store4">store4</option>
-                            <option value="store5">store5</option>
-                        </select>
-                        <br>
-                        <button type="submit">Create</button>
-                        <button type="button" id="update">Update</button>
-                        <button type="button" id="to_inventory">Send to Inventory</button>
-                    </form>
-                    <!--End of Create Order-->
-                </div>
-            </section>
-        </div>
-        <!--Create Order-->
-
-        <div class="col-md-9">
-            <!--Data Table-->
-            <section class="mt-3">
-                <div class="container-fluid">
-                    <div class="uk-card uk-card-default uk-card-body">
-                        <h3 class="uk-card-title uk-text-center"> Pending Orders</h3>
-                        <div class="row">
-                            <div class="col-md-6 ml-auto mb-3"> <input type="search" class="uk-input" name="myInput"
-                                    id="myInput" placeholder="Search...">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <section class="mt-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <form method="post" id="formdata">
+                                            <div class="col-md-12">
+                                                <h5 class="divider">Book Details</h5>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="title" class="col-sm-4 col-form-label">Book
+                                                        Title</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control shadow-none" id="title"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="author" class="col-sm-4 col-form-label">Author</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control shadow-none" id="author"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="isbn" class="col-sm-4 col-form-label">ISBN</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control shadow-none" id="isbn"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="genre" class="col-sm-4 col-form-label">Genre</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control shadow-none" list="datalistOptions"
+                                                            id="genre" placeholder="Search...">
+                                                        <datalist id="datalistOptions">
+                                                            <option value="Adventure">Adventure
+                                                            <option value="Fantasy">Fantasy
+                                                            <option value="Historical Fiction">Historical Fiction
+                                                            <option value="Literary Fiction">Literary Fiction
+                                                            <option value="Motivational/Inspirational">
+                                                                Motivational/Inspirational
+                                                            <option value="Romance">Romance
+                                                            <option value="Science Fiction">Science Fiction
+                                                            <option value="Others">Others
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="publication_date"
+                                                        class="col-sm-4 col-form-label">Publication Date</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="date" class="form-control shadow-none"
+                                                            id="publication_date" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <div class="row">
+                                                    <label for="book_size" class="col-sm-4 col-form-label">Book Size
+                                                    </label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-select shadow-none" id="book_size">
+                                                            <option value=""></option>
+                                                            <option value="Quarto">Quarto</option>
+                                                            <option value="Octavo">Octavo</option>
+                                                            <option value="Duodecimo">Duodecimo</option>
+                                                            <option value="Sextodecimo">Sextodecimo</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <h5 class="divider">Pricing</h5>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="amount" class="col-sm-4 col-form-label">Amount</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control shadow-none"
+                                                            id="amount" required step="0.01">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="quantity"
+                                                        class="col-sm-4 col-form-label">Quantity</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control shadow-none"
+                                                            id="quantity" required step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="hidden" name="total" id="total" placeholder="total">
+                                                <input type="hidden" name="selling_price" id="selling_price"
+                                                    placeholder="selling_price">
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="interest" class="col-sm-4 col-form-label">Interest
+                                                        (decimal)</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control shadow-none"
+                                                            id="interest" required step="0.01">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <input type="hidden" name="available" id="available"
+                                                    placeholder="available">
+                                                <input type="hidden" name="projected_profit" id="projected_profit"
+                                                    placeholder="projected_profit">
+                                                <input type="hidden" name="document" id="document"
+                                                    placeholder="document">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <h5 class="divider">Contact Person</h5>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="supplier"
+                                                        class="col-sm-4 col-form-label">Supplier</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control shadow-none"
+                                                            id="supplier" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="contact" class="col-sm-4 col-form-label">Contact</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control shadow-none" id="contact"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="row">
+                                                    <label for="delivery_address"
+                                                        class="col-sm-4 col-form-label">Delivery
+                                                        Address</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-select shadow-none" id="delivery_address">
+                                                            <option value=""></option>
+                                                            <option value="Warehouse 1">Warehouse 1</option>
+                                                            <option value="Warehouse 2">Warehouse 2</option>
+                                                            <option value="Branch 1">Branch 1</option>
+                                                            <option value="Branch 2">Branch 2</option>
+                                                            <option value="Branch 3">Branch 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 text-end">
+                                                <button type="button" class="btn btn-success btn-sm float-start"
+                                                    id="to_inventory">Send to
+                                                    Inventory</button>
+                                                <button type="button" id="update" class="btn btn-sm btn-light">Save
+                                                    Changes</button>
+                                                <button type="submit" class="btn btn-sm btn-create">Create New</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-8">
+                <section class="mt-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 ms-auto mb-3"> <input type="search"
+                                                class="form-control shadow-none" name="myInput" id="myInput"
+                                                placeholder="Search...">
+                                        </div>
+                                    </div>
 
-                        <div class="table-responsive">
-                            <table id="myTable" class="table table-sm table-hover text-truncate">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">Events</th>
-                                        <th>title</th>
-                                        <th>Amount</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
-                                        <th>Interest</th>
-                                        <th>Delivery Address</th>
-                                        <th>Supplier</th>
-                                        <th>Contact</th>
-                                        <th>Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="datatable">
-                                </tbody>
-                            </table>
+                                    <div class="table-responsive">
+                                        <table id="myTable"
+                                            class="table table-bordered table-hover table-sm text-center text-truncate">
+                                            <thead class="thead-inverse"
+                                                style="background-color: #25476D; color: #ffffff;">
+                                                <tr>
+                                                    <td colspan="2">Events</td>
+                                                    <td>Title</td>
+                                                    <td>Author</td>
+
+                                                    <td>Interest</td>
+                                                    <td>Delivery Address</td>
+                                                    <td>Supplier</td>
+                                                    <td>Contact</td>
+                                                    <td>Date</td>
+                                                    <td>Amount</td>
+                                                    <td>Quantity</td>
+                                                    <td>Total</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="datatable">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!--End of DataTable-->
+                </section>
+            </div>
+            <p class="back-top" style="font-size: 30px; text-align: right; position: relative; color: #25476D;"><a
+                    href="#">
+                    <i class="fas fa-arrow-circle-up mr-3" style="color: #25476D;"></i></a></p>
         </div>
     </div>
-
-    <br>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/connection.js"></script>

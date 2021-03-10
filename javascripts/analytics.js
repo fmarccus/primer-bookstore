@@ -5,18 +5,21 @@ const datatable = $("#datatable");//id for tbody
 function render(doc) {
     datatable.append(`<tr id="${doc.id}">
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
-    <td>${doc.data().title}</td>
+    <td><span style="font-weight:bold;">${doc.data().title}</span></td>
     <td>${doc.data().isbn}</td>
     <td>Php ${doc.data().amount}</td>
     <td>${doc.data().quantity} pcs.</td>
     <td>Php ${doc.data().total}</td>
     <td>${doc.data().interest}</td>
     <td>Php ${doc.data().selling_price.toFixed(2)}</td>
-    <td>${doc.data().available} pcs (${((doc.data().available / doc.data().quantity) * 100).toFixed(2)}%)</td>
-    <td>${doc.data().quantity_sold} pcs (${((doc.data().quantity_sold / doc.data().quantity) * 100).toFixed(2)}%)</td>
-    <td>Php ${doc.data().sales} (${((doc.data().sales / (doc.data().selling_price * doc.data().quantity)) * 100).toFixed(2)}%)</td>
-    <td>Php ${(doc.data().selling_price * doc.data().quantity).toFixed(2)}</td>
-    <td>Php ${doc.data().projected_profit.toFixed(2)}</td>
+    <td>${doc.data().available} pcs</td>
+    <td class="bg-light"><span style="font-weight:bold; color:#25476D;">${((doc.data().available / doc.data().quantity) * 100).toFixed(2)}%</span></td>
+    <td style="background-color:#cef2f0;">${doc.data().quantity_sold} pcs</td>
+    <td class="bg-light"><span style="font-weight:bold; color:#25476D;">${((doc.data().quantity_sold / doc.data().quantity) * 100).toFixed(2)}%</span></td>
+    <td style="background-color:#cfcef2;">Php ${doc.data().sales}</td>
+    <td class="bg-light"><span style="font-weight:bold; color:#25476D;">${((doc.data().sales / (doc.data().selling_price * doc.data().quantity)) * 100).toFixed(2)}%</span></td>
+    <td style="background-color:#cee7f2;">Php ${(doc.data().selling_price * doc.data().quantity).toFixed(2)}</td>
+    <td style="background-color:#d6f2ce; font-weight:bold;">Php ${doc.data().projected_profit.toFixed(2)}</td>
   
     </tr>`)
 
@@ -93,8 +96,10 @@ $('#update').on('click', () => {
 })
 
 
+
+
 //real time rendering of data
-db.collection('inventories').orderBy('total').onSnapshot(snapshot => {
+db.collection('inventories').orderBy('title').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == "added") {

@@ -6,6 +6,7 @@ formdata.on('submit', (e) => {
     e.preventDefault();
     db.collection('orders').add({
         title: $("#title").val(),
+        author: $("#author").val(),
         isbn: $("#isbn").val(),
         genre: $("#genre").val(),
         publication_date: $("#publication_date").val(),
@@ -20,13 +21,14 @@ formdata.on('submit', (e) => {
         selling_price: parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val())),
         available: parseFloat($("#quantity").val()),
         projected_profit:
-        ((parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val()))) * parseFloat($("#quantity").val())) -
-        (parseFloat($("#amount").val()) * parseFloat($("#quantity").val())),
+            ((parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val()))) * parseFloat($("#quantity").val())) -
+            (parseFloat($("#amount").val()) * parseFloat($("#quantity").val())),
         quantity_sold: 0,
         sales: 0,
         date: Date()
     })
     $("#title").val("");
+    $("#author").val("");
     $("#isbn").val("");
     $("#genre").val("");
     $("#publication_date").val("");
@@ -57,14 +59,16 @@ function render(doc) {
     <td><a class="btn btn-sm btn-light" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().title}</td>
-    <td>Php ${parseFloat(doc.data().amount).toFixed(2)}</td>
-    <td>${doc.data().quantity} pcs.</td>
-    <td>Php ${parseFloat(doc.data().total).toFixed(2)}</td>
+    <td>${doc.data().author}</td>
+    
     <td>${parseFloat(doc.data().interest).toFixed(2)}</td>
     <td>${doc.data().delivery_address}</td>
     <td>${doc.data().supplier}</td>
     <td>${doc.data().contact}</td>
     <td>${doc.data().date}</td>
+    <td class="fw-bold" style="color:white;background-color: #a4cbeb">Php ${parseFloat(doc.data().amount).toFixed(2)}</td>
+    <td class="fw-bold" style="color:white; background-color: #7ca8cc">${doc.data().quantity} pcs.</td>
+    <td class="fw-bold" style="color:white; background-color: #5584ab">Php ${parseFloat(doc.data().total).toFixed(2)}</td>
     </tr>`)
 
 
@@ -88,6 +92,7 @@ function render(doc) {
         var id = e.target.id;
         db.collection('orders').doc(id).get().then(doc => {
             $('#title').val(doc.data().title);
+            $('#author').val(doc.data().author);
             $('#isbn').val(doc.data().isbn);
             $('#genre').val(doc.data().genre);
             $('#publication_date').val(doc.data().publication_date);
@@ -109,6 +114,7 @@ $('#update').on('click', () => {
     var id = $('#document').val();
     db.collection('orders').doc(id).set({
         title: $("#title").val(),
+        author: $("#author").val(),
         isbn: $("#isbn").val(),
         genre: $("#genre").val(),
         publication_date: $("#publication_date").val(),
@@ -123,8 +129,8 @@ $('#update').on('click', () => {
         selling_price: parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val())),
         available: parseFloat($("#quantity").val()),
         projected_profit:
-        ((parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val()))) * parseFloat($("#quantity").val())) -
-        (parseFloat($("#amount").val()) * parseFloat($("#quantity").val())),
+            ((parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val()))) * parseFloat($("#quantity").val())) -
+            (parseFloat($("#amount").val()) * parseFloat($("#quantity").val())),
         quantity_sold: 0,
         sales: 0,
         date: Date()
@@ -132,6 +138,7 @@ $('#update').on('click', () => {
         merge: true
     })
     $("#supplier").val("");
+    $("#author").val("");
     $("#delivery_address").val("");
     $("#isbn").val("");
     $("#genre").val("");
@@ -160,6 +167,7 @@ $('#to_inventory').on('click', (e) => {
     e.preventDefault();
     db.collection('inventories').add({
         title: $("#title").val(),
+        author: $("#author").val(),
         isbn: $("#isbn").val(),
         genre: $("#genre").val(),
         publication_date: $("#publication_date").val(),
@@ -174,8 +182,8 @@ $('#to_inventory').on('click', (e) => {
         selling_price: parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val())),
         available: parseFloat($("#quantity").val()),
         projected_profit:
-        ((parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val()))) * parseFloat($("#quantity").val())) -
-        (parseFloat($("#amount").val()) * parseFloat($("#quantity").val())),
+            ((parseFloat($("#amount").val()) + (parseFloat($("#amount").val()) * parseFloat($("#interest").val()))) * parseFloat($("#quantity").val())) -
+            (parseFloat($("#amount").val()) * parseFloat($("#quantity").val())),
         quantity_sold: 0,
         sales: 0,
         date: Date()
@@ -184,6 +192,7 @@ $('#to_inventory').on('click', (e) => {
     var id = $('#document').val();
     db.collection('orders').doc(id).delete();
     $("#title").val("");
+    $("#author").val("");
     $("#isbn").val("");
     $("#genre").val("");
     $("#publication_date").val("");
@@ -209,7 +218,7 @@ $('#to_inventory').on('click', (e) => {
 })
 
 //real time rendering of data
-db.collection('orders').orderBy('total').onSnapshot(snapshot => {
+db.collection('orders').orderBy('title').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == "added") {

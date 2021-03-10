@@ -44,7 +44,7 @@
 
 <body>
     <section>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #25476D;">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #25476D;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -56,28 +56,32 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
                                 href="/client-side/Miscellaneous/about.html"><i
-                                    class="fas fa-info-circle me-1 text-light"></i>About
+                                    class="fas fa-info-circle me-1  text-light" style="padding-left: 15px;"></i>About
                                 Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
                                 href="/client-side/Miscellaneous/stores.html"><i
-                                    class="fas fa-map-marker-alt me-1 text-light"></i>Stores</a>
+                                    class="fas fa-map-marker-alt me-1 text-light"
+                                    style="padding-left: 15px;"></i>Stores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
                                 href="/client-side/Miscellaneous/faqs.html"><i
-                                    class="fas fa-question-circle me-1 text-light"></i>FAQs</a>
+                                    class="fas fa-question-circle me-1 text-light"
+                                    style="padding-left: 15px;"></i>FAQs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
                                 href="/client-side/Miscellaneous/privacy.html"><i
-                                    class="fas fa-shield-alt me-1 text-light"></i>Privacy Policies</a>
+                                    class="fas fa-shield-alt me-1 text-light" style="padding-left: 15px;"></i>Privacy
+                                Policies</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
                                 href="/client-side/Miscellaneous/contactus.html"><i
-                                    class="fas fa-envelope-open-text me-1 text-light"></i>Contact Us</a>
+                                    class="fas fa-envelope-open-text me-1 text-light"
+                                    style="padding-left: 15px;"></i>Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -90,9 +94,9 @@
 
     <section>
         <nav class="title">
-            <div class="container">
+            <div class="container mt-5">
                 <br>
-                <a href="index.html" id="brand" style="text-decoration: none;" ><i class="fab fa-pinterest me-2 ml-5"
+                <a href="index.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
                         id="icon_logo"></i>PRIMER BOOKSTORE</a>
             </div>
         </nav>
@@ -100,116 +104,97 @@
             <div class="row">
                 <div class="col-md-6 mt-2 mx-auto">
                     <input id="myInput" class="uk-input" type="text" style="border: 1px solid #25476D;"
-                        placeholder="Search for products by keyword / title / isbn">
+                        placeholder="Search for products by keyword / title / ISBN">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="uk-position-relative">
+                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                    <div class="uk-navbar-center ">
+                        <ul class="uk-navbar-nav">
+                            <li>
+                                <a href="#" style="color: rgb(114, 114, 114); font-family: Arial; font-size: 14px;">All
+                                    Departments</a>
+                                <div class="uk-navbar-dropdown">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-active"><a href="#">Books</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active"><a href="#">Gifts & Occasion Supplies</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active"><a href="#">Stationery</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active"><a href="#">Toys & Games</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active"><a href="#">Workstation</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                    </ul>
+                                </div>
+                            </li>
 
-                    <nav class="uk-navbar-container" uk-navbar="dropbar: true"
-                        style="background-color: rgb(255, 255, 255);">
+                            <li>
+                                <a href="#"
+                                    style="color: rgb(114, 114, 114); font-family: 'Arial'; font-size: 14px;">Best
+                                    Buy</a>
+                            </li>
 
-                        <div class="uk-navbar-center">
+                            <li>
+                                <a href="#" style="color: rgb(114, 114, 114); font-family: Arial; font-size: 14px;">New
+                                    Releases</a>
+                            </li>
 
-                            <ul class="uk-navbar-nav">
-
-                                <li>
-                                    <a href="#" style="color: rgb(25, 41, 41); font-size: 16px;">Shop by Category</a>
-                                    <div class="uk-navbar-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Active</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-header">Header</li>
-                                            <li><a href="#">Item</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">Item</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#" style="color: rgb(25, 41, 41); font-size: 16px;">New Arrivals</a>
-                                    <div class="uk-navbar-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Active</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-header">Header</li>
-                                            <li><a href="#">Item</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">Item</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a href="#" style="color: rgb(25, 41, 41); font-size: 16px;">Best Buy</a>
-                                    <div class="uk-navbar-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Active</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-header">Header</li>
-                                            <li><a href="#">Item</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">Item</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#" style="color: rgb(25, 41, 41); font-size: 16px;">Genre</a>
-                                    <div class="uk-navbar-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Active</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-header">Header</li>
-                                            <li><a href="#">Item</a></li>
-                                            <li><a href="#">Item</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">Item</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a href="#" style="color: rgb(25, 41, 41); font-size: 16px;">Deals</a>
-                                    <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
-                                        <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
-                                            <div>
-                                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                    <li class="uk-active"><a href="#">Active</a></li>
-                                                    <li><a href="#">Item</a></li>
-                                                    <li class="uk-nav-header">Header</li>
-                                                    <li><a href="#">Item</a></li>
-                                                    <li><a href="#">Item</a></li>
-                                                    <li class="uk-nav-divider"></li>
-                                                    <li><a href="#">Item</a></li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                    <li class="uk-active"><a href="#">Active</a></li>
-                                                    <li><a href="#">Item</a></li>
-                                                    <li class="uk-nav-header">Header</li>
-                                                    <li><a href="#">Item</a></li>
-                                                    <li><a href="#">Item</a></li>
-                                                    <li class="uk-nav-divider"></li>
-                                                    <li><a href="#">Item</a></li>
-                                                </ul>
-                                            </div>
+                            <li>
+                                <a href="#"
+                                    style="color: rgb(114, 114, 114); font-family: Arial; font-size: 14px;">Genre</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
+                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                                        <div>
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                <li class="uk-active"><a href="#">ART & DESIGN</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Architecture</a></li>
+                                                <li><a href="#">Beauty & Fashion</a></li>
+                                                <li><a href="#">Photography</a></li>
+                                                <li><a href="#">Graphic Design</a></li>
+                                                <li><a href="#">Film & Media</a></li>
+                                            </ul>
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                <li class="uk-active"><a href="#">CHILDREN'S</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Activities & Hobbies</a></li>
+                                                <li><a href="#">Children's Classic</a></li>
+                                                <li><a href="#">Young Adult</a></li>
+                                                <li><a href="#">Toddler</a></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                <li class="uk-active"><a href="#">GRAPHIC NOVEL</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">DC / Marvel</a></li>
+                                                <li><a href="#">Illustrated Humor</a></li>
+                                                <li><a href="#">Independent</a></li>
+                                                <li><a href="#">Manga</a></li>
+                                            </ul>
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                <li class="uk-active"><a href="#">PROFESSIONAL</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Business</a></li>
+                                                <li><a href="#">Education & Language</a></li>
+                                                <li><a href="#">Science & Nature</a></li>
+                                                <li><a href="#">Psychology</a></li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="uk-navbar-dropbar"></div>
-                </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
     </section>
+
 
     <br>
 
@@ -360,7 +345,7 @@
     <!-- End of Fillers -->
 
     <!-- Embedded Youtube Videos -->
-  
+
     <section>
         <div class="container">
             <div class="row">

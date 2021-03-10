@@ -6,7 +6,7 @@ function render(doc) {
     book_rows.append(`
     <div class="col-md-3 mb-3" id="${doc.id}">
         <div class="card-reco mx-auto" style="width:250px; max-height:100%;">
-            <img class="card-img-top mt-3" src="/images/books_reco/${doc.data().title}.jpg" alt="Card image"
+            <img class="card-img-top mt-3" src="/images/books/${doc.data().title}.jpg" alt="Card image"
             style="max-width:100%; height:150px;">
             <div class="card-body">
             <p class="card-text"><small>ISBN:${doc.data().isbn}</small></p>

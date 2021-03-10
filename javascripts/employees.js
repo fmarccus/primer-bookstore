@@ -34,7 +34,7 @@ formdata.on('submit', (e) => {
 //retrieve records
 function render(doc) {
     tabledata.append(`<tr id="${doc.id}"> 
-    <td><a class="btn btn-sm btn-warning" name="update" href ="javascript:void(0)" id="${doc.id}">Edit</a></td>
+    <td><a class="btn btn-sm btn-light" name="update" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().lastname}</td>
     <td>${doc.data().firstname}</td>
@@ -42,11 +42,11 @@ function render(doc) {
     <td>${doc.data().age}</td>
     <td>${doc.data().sex}</td>
     <td>${doc.data().nationality}</td>
-    <td>${doc.data().job}</td>
-    <td>Php ${doc.data().salary}</td>
+    <td class="fw-bold" style="color:white;background-color: #a4cbeb">${doc.data().job}</td>
+    <td class="fw-bold" style="color:white; background-color: #7ca8cc">Php ${doc.data().salary}</td>
     </tr>`)
 
-//when button with name delete is click, delete the document
+    //when button with name delete is click, delete the document
     $("[name = 'delete']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -60,7 +60,7 @@ function render(doc) {
         })
     })
 
-//when button with name update is click, retrieve the data and send to form
+    //when button with name update is click, retrieve the data and send to form
     $("[name = 'update']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -110,7 +110,7 @@ $('#update').on('click', () => {
     })
 })
 //real time rendering
-db.collection('employees').orderBy('salary').onSnapshot(snapshot => {
+db.collection('employees').orderBy('lastname').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == "added") {
