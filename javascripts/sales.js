@@ -4,11 +4,12 @@ function render(doc) {
     datatable.append(`<tr id="${doc.id}">
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().title}</td>
-    <td>Php ${parseFloat(doc.data().selling_price).toFixed(2)}</td>
-    <td>${doc.data().quantity_sold} pcs</td>
-    <td>Php ${parseFloat(doc.data().sum).toFixed(2)}</td>
+
     <td>${doc.id}</td>
     <td>${doc.data().date}</td>
+    <td class="fw-bold" style="color:white;background-color: #a4cbeb">Php ${parseFloat(doc.data().selling_price).toFixed(2)}</td>
+    <td class="fw-bold" style="color:white; background-color: #7ca8cc">${doc.data().quantity_sold} pcs</td>
+    <td class="fw-bold" style="color:white; background-color: #5584ab">Php ${parseFloat(doc.data().sum).toFixed(2)}</td>
     </tr>`)
 
     $("[name = 'delete']").click((e) => {

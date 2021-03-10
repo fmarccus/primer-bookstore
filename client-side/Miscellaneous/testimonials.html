@@ -30,7 +30,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    
+    <link rel="stylesheet" href="/css/flatly.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -40,9 +40,9 @@
 
 <body>
     <section>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #25476D;">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #25476D;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand" href="/"><i class="fab fa-pinterest me-3"></i>Primer Bookstore</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -51,56 +51,54 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
-                                href="/client-side/Miscellaneous/about.html"><i
-                                    class="fas fa-info-circle me-1  text-light" style="padding-left: 15px;"></i>About
+                                href="/client-side/Miscellaneous/about.html">About
                                 Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
-                                href="/client-side/Miscellaneous/stores.html"><i
-                                    class="fas fa-map-marker-alt me-1 text-light" style="padding-left: 15px;"></i>Stores</a>
+                                href="/client-side/Miscellaneous/stores.html">Stores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
-                                href="/client-side/Miscellaneous/faqs.html"><i
-                                    class="fas fa-question-circle me-1 text-light" style="padding-left: 15px;"></i>FAQs</a>
+                                href="/client-side/Miscellaneous/faqs.html">FAQs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
-                                href="/client-side/Miscellaneous/privacy.html"><i
-                                    class="fas fa-shield-alt me-1 text-light" style="padding-left: 15px;"></i>Privacy Policies</a>
+                                href="/client-side/Miscellaneous/privacy.html">Privacy
+                                Policies</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" style="text-decoration: none;"
-                                href="/client-side/Miscellaneous/contactus.html"><i
-                                    class="fas fa-envelope-open-text me-1 text-light" style="padding-left: 15px;"></i>Contact Us</a>
+                                href="/client-side/Miscellaneous/contactus.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </section>
+    <!--top bar-->
+
 
     <!-- Title bar -->
     <section>
         <nav class="title">
-            <div class="container">
-                <br>
-                <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
-                        id="icon_logo"></i>PRIMER BOOKSTORE</a>
+            <div class="container mt-5">
+                <br><br>
+                <a href="/index.html" id="brand" style="text-decoration: none;"><i
+                        class="fas fa-laugh-beam me-2 ml-5" id="icon_logo"></i>CUSTOMER REVIEWS</a>
             </div>
         </nav>
     </section>
     <!-- End of Title bar -->
 
-
+    <br>
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <section class="mt-3">
                     <div class="uk-card uk-card-default uk-card-body">
-                        <h3 class="uk-card-title">Testimonials</h3>
+                        
                         <ul class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s" uk-sortable="handle: .uk-card"
                             uk-grid id="sortable">
 
@@ -109,11 +107,20 @@
                 </section>
             </div>
         </div>
-        <br><br><br><br><br><br><br>
+        <br><br><br><br>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/testimonials.js"></script>
     <script src="/javascripts/search.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <p class="back-top" style="font-size: 30px; text-align: right; position: relative; color: #25476D;"><a
+                href="#">
+                <i class="fas fa-arrow-circle-up mr-3" style="color: #25476D;"></i></a></p>
+        </div>
+    </div>
+    <br><br><br>
 
     <!--Footer-->
     <footer class="footer">

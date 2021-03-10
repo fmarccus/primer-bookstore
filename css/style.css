@@ -2,6 +2,14 @@
     font-size: 14px;
 }
 
+.text-primary {
+    color: #25476D !important;
+}
+table.table-hover tbody tr:hover {
+    background-color: #cfe9ff; 
+}
+
+
 
 .form-control {
     font-size: 14px;

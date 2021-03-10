@@ -19,8 +19,8 @@ const tabledata = $("#tabledata");
 
 function render(doc) {
     tabledata.append(`<tr id="${doc.id}"> 
-    <td><a class="uk-button uk-button-small uk-button-default" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
-    <td><a class="uk-button uk-button-small uk-button-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
+    <td><a class="btn btn-sm btn-light" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
+    <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().name}</td>
     <td>${doc.data().phone}</td>
     <td>${doc.data().email}</td>
@@ -71,6 +71,8 @@ $('#unpublish').on('click', (e) => {
     $("#phone").val("");
     $("#email").val("");
     $("#feedback").val("");
+    $("#date").val("");
+
     $("#document").val("");
     Swal.fire({
         position: 'center',

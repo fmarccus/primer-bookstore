@@ -41,25 +41,27 @@ function render(doc) {
 
     //var color = '#' + Math.random().toString(16).substr(2, 6);
 
-  
-    
-    
+
+
+
     column.setAttribute('class', 'col-md-4 mb-2');
     column.setAttribute('data-id', doc.id);//column because it has to be deleted too for real time response
-    card.setAttribute('class', 'card bg-light');
+    card.setAttribute('class', 'card');
     //card.style.backgroundColor = color;
     cardbody.setAttribute('data-id', doc.id);//card body because this is the parent element of the delete text
     cardbody.setAttribute('class', 'card-body');
-    cardtitle.setAttribute('class', 'card-title mb-4 font-weight-bold text-success')
-   
+    cardbody.style.backgroundColor='#bcdbf5'
+    cardtitle.setAttribute('class', 'card-title mb-4 fw-bold')
+    cardtitle.style.color='#25476d'
+
 
     cardtitle.textContent = doc.data().title;
     objective.textContent = doc.data().objective;
     accomplish.textContent = 'On ' + doc.data().accomplish;
-    
-    date.textContent = 'Added on '+doc.data().date;
+
+    date.textContent = 'Added on ' + doc.data().date;
     cross.textContent = "Done";
-    cross.setAttribute('class', 'btn btn-sm btn-success mt-1 float-right');
+    cross.setAttribute('class', 'btn btn-sm btn-light mt-1 float-end');
     cross.style.cursor = "pointer";
 
 

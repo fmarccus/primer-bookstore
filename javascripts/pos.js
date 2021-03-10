@@ -4,11 +4,11 @@ function render(doc) {
 
 
     datatable.append(`<tr id="${doc.id}">
-    <td><a class="btn btn-sm btn-success" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
+    <td><a class="btn btn-sm btn-light" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
     <td>${doc.data().title}</td>
-    <td>Php ${doc.data().selling_price.toFixed(2)}</td>
-    <td>${doc.data().available} pcs</td>
-    <td>${doc.id} </td>
+    <td class="fw-bold" style="color:white; background-color: #7ca8cc">Php ${doc.data().selling_price.toFixed(2)}</td>
+    <td class="fw-bold" style="color:white; background-color: #5584ab">${doc.data().available} pcs</td>
+    
     </tr>`)
 
     //transfers the value of an title in the form field

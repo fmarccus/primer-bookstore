@@ -22,7 +22,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
-    
+
     <link rel="stylesheet" href="/css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -113,19 +113,23 @@
     <br>
     <!--Data Table-->
 
-    <div class="container">
-        <input type="search" name="myInput" id="myInput" placeholder="Search...">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 ms-auto mb-3"><input id="myInput" class="form-control shadow-none" type="text"
+                    placeholder="Search...">
+            </div>
+        </div>
         <div class="table-responsive">
-            <table id="myTable" class="table table-sm table-hover">
-                <thead>
+            <table id="myTable" class="table table-bordered table-hover table-sm text-center">
+                <thead class="thead-inverse" style="background-color: #25476D; color: #ffffff;">
                     <tr>
-                        <th>Event</th>
-                        <th>Title</th>
-                        <th>Amount</th>
-                        <th>Quantity Sold</th>
-                        <th>Sum</th>
-                        <th>Unique ID</th>
-                        <th>Date of Purchase</th>
+                        <td>Event</td>
+                        <td>Title</td>
+                        <td>Unique ID</td>
+                        <td>Date of Purchase</td>
+                        <td>Amount</td>
+                        <td>Quantity Sold</td>
+                        <td>Total</td>
                     </tr>
                 </thead>
                 <tbody id="datatable">
@@ -133,6 +137,8 @@
                 </tbody>
             </table>
         </div>
+        <p class="back-top" style="font-size: 30px; text-align: right; position: relative; color: #25476D;"><a href="#">
+                <i class="fas fa-arrow-circle-up mr-3" style="color: #25476D;"></i></a></p>
     </div>
     <!--End of DataTable-->
 

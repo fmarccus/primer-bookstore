@@ -15,6 +15,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         // User is signed in.
         document.getElementById("user_div").style.display = "block";
         document.getElementById("login_div").style.display = "none";
+        
 
         var user = firebase.auth().currentUser;
 
@@ -22,6 +23,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 
             var email_id = user.email;
             document.getElementById("user_para").innerHTML = "Welcome, " + email_id;
+            
+           
 
         }
 
@@ -42,7 +45,13 @@ function login() {
         var errorCode = error.code;
         var errorMessage = error.message;
 
-        window.alert("Error : " + errorMessage);
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Error: ' + errorMessage,
+            showConfirmButton: false,
+            timer: 1500
+        })
 
         // ...
     });
@@ -53,4 +62,5 @@ function logout() {
     firebase.auth().signOut();
     $("#userEmail").val("");
     $("#userPass").val("");
+
 }
