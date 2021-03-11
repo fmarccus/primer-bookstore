@@ -115,39 +115,91 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 ms-auto mb-3"><input id="myInput" class="form-control shadow-none" type="text"
-                    placeholder="Search...">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 me-auto">
+                                <div id="grpChkBox" class="my-2">
+                                    <!-- Example single danger button -->
+                                    <div class="btn-group dropend" id="display_table">
+                                        <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Show/hide columns
+                                        </button>
+                                        <ul class="dropdown-menu" id="hide_show">
+                                            <li><a class="dropdown-item"><input class="form-check-input" name="_events"
+                                                        type="checkbox">
+                                                    Events</a>
+                                            </li>
+                                            <li><a class="dropdown-item"><input class="form-check-input" name="_title"
+                                                        type="checkbox"> Title</a>
+                                            </li>
+                                            <li><a class="dropdown-item"><input class="form-check-input" name="_unique"
+                                                        type="checkbox"> Unique ID</a>
+                                            </li>
+                                            <li><a class="dropdown-item"><input class="form-check-input" name="_dop"
+                                                        type="checkbox"> Date of Purchase</a>
+                                            </li>
+                                            <li><a class="dropdown-item"><input class="form-check-input" name="_amount"
+                                                        type="checkbox">
+                                                    Amount</a> </li>
+                                            <li><a class="dropdown-item"><input class="form-check-input" name="_quantity"
+                                                        type="checkbox">
+                                                    Quantity Sold</a> </li>
+
+                                            <li><a class="dropdown-item"><input class="form-check-input" name="_total"
+                                                        type="checkbox">
+                                                    Total</a></li>
+                                            <li>
+                                                <a class="dropdown-item"><input class="form-check-input" id="_all"
+                                                        type="checkbox">
+                                                    All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ms-auto mb-3"> <input type="search" class="form-control shadow-none"
+                                    name="myInput" id="myInput" placeholder="Search...">
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="myTable" class="table table-bordered table-hover table-sm text-center">
+                                <thead class="thead-inverse" style="background-color: #25476D; color: #ffffff;">
+                                    <tr>
+                                        <td class="_events">Event</td>
+                                        <td class="_title">Title</td>
+                                        <td class="_unique">Unique ID</td>
+                                        <td class="_dop">Date of Purchase</td>
+                                        <td class="_amount">Amount</td>
+                                        <td class="_quantity">Quantity Sold</td>
+                                        <td class="_total">Total</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="datatable">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
+            <p class="back-top" style="font-size: 30px; text-align: right; position: relative; color: #25476D;"><a
+                    href="#">
+                    <i class="fas fa-arrow-circle-up mr-3" style="color: #25476D;"></i></a></p>
         </div>
-        <div class="table-responsive">
-            <table id="myTable" class="table table-bordered table-hover table-sm text-center">
-                <thead class="thead-inverse" style="background-color: #25476D; color: #ffffff;">
-                    <tr>
-                        <td>Event</td>
-                        <td>Title</td>
-                        <td>Unique ID</td>
-                        <td>Date of Purchase</td>
-                        <td>Amount</td>
-                        <td>Quantity Sold</td>
-                        <td>Total</td>
-                    </tr>
-                </thead>
-                <tbody id="datatable">
-
-                </tbody>
-            </table>
-        </div>
-        <p class="back-top" style="font-size: 30px; text-align: right; position: relative; color: #25476D;"><a href="#">
-                <i class="fas fa-arrow-circle-up mr-3" style="color: #25476D;"></i></a></p>
-    </div>
-    <!--End of DataTable-->
+        <!--End of DataTable-->
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/javascripts/connection.js"></script>
-    <script src="/javascripts/search.js"></script>
-    <script src="/javascripts/sales.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/javascripts/connection.js"></script>
+        <script src="/javascripts/search.js"></script>
+        <script src="/javascripts/sales.js"></script>
 
 </body>
 

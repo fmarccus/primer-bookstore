@@ -5,7 +5,7 @@ const book_rows = $("#book_rows"); //id for form
 function render(doc) {
     book_rows.append(`
     <div class="col-md-3 mb-3" id="${doc.id}">
-        <div class="card-reco mx-auto" style="width:250px; height:400px; max-height:100%;">
+        <div class="card-reco mx-auto border-primary" style="width:250px; height:400px; max-height:100%; background-color:white;">
             <img class="card-img-top mt-3" src="/images/books/${doc.data().title}.jpg" alt="Card image"
             style="max-width:100%; height:150px;">
             <div class="card-body">

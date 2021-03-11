@@ -43,3 +43,22 @@ db.collection('sales').orderBy('date').onSnapshot(snapshot => {
         }
     })
 })
+
+$(function () {
+    var $chk = $("#grpChkBox input:checkbox");
+    var $tbl = $("#myTable");
+    var $tblhead = $("#myTable td");
+
+    $chk.prop('checked', true);
+
+    $chk.click(function () {
+        var colToHide = $tblhead.filter("." + $(this).attr("name"));
+        var index = $(colToHide).index();
+        $tbl.find('tr :nth-child(' + (index + 1) + ')').toggle();
+    });
+
+    $("#_all").click(function () {
+        $tbl.toggle();
+        
+    })
+});

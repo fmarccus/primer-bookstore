@@ -113,30 +113,94 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
+                        <div class="col-md-6 me-auto">
+                            <div id="grpChkBox" class="my-2">
+                                <!-- Example single danger button -->
+                                <div class="btn-group dropend" id="display_table">
+                                    <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Show/hide columns
+                                    </button>
+                                    <ul class="dropdown-menu" id="hide_show">
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_events"
+                                                    type="checkbox"> Event</a>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_title"
+                                                    type="checkbox"> Title</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_isbn"
+                                                    type="checkbox"> ISBN</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_amount"
+                                                    type="checkbox"> Amount</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_quantity"
+                                                    type="checkbox"> Quantity</a> </li>
+
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_principal"
+                                                    type="checkbox"> Principal</a></li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_interest"
+                                                    type="checkbox"> Interest</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_selling"
+                                                    type="checkbox"> Selling Price</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_available"
+                                                    type="checkbox"> Available</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_pavailable"
+                                                    type="checkbox"> % Available</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                    name="_quantitysold" type="checkbox"> Quantity Sold</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                    name="_pquantitysold" type="checkbox"> % Quantity Sold</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_sales"
+                                                    type="checkbox"> Sales</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_psales"
+                                                    type="checkbox"> % Sales</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_tsales"
+                                                    type="checkbox"> Target Sales</a>
+                                        </li>
+                                        <li><a class="dropdown-item"><input class="form-check-input" name="_profit"
+                                                    type="checkbox"> Projected Profit</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"><input class="form-check-input" id="_all"
+                                                    type="checkbox"> All</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-6 ms-auto mb-3"> <input type="search" class="form-control shadow-none"
                                 name="myInput" id="myInput" placeholder="Search...">
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="myTable" class="table table-bordered table-hover table-sm text-center text-truncate">
+                        <table id="myTable"
+                            class="table table-bordered border-white table-hover table-sm text-center text-truncate">
                             <thead class="thead-inverse" style="background-color: #25476D; color: #ffffff;">
                                 <tr>
-                                    <td colspan="1">Event</td>
-                                    <td>Title</td>
-                                    <td>ISBN</td>
-                                    <td>Amount</td>
-                                    <td>Quantity</td>
-                                    <td>Principal</td>
-                                    <td>Interest</td>
-                                    <td>Selling Price</td>
-                                    <td>Available</td>
-                                    <td>%</td>
-                                    <td>Quantity Sold</td>
-                                    <td>%</td>
-                                    <td>Sales</td>
-                                    <td>%</td>
-                                    <td>Target Sales</td>
-                                    <td>Projected Profit</td>
+                                    <td class="_events">Event</td>
+                                    <td class="_title">Title</td>
+                                    <td class="_isbn">ISBN</td>
+                                    <td class="_amount">Amount</td>
+                                    <td class="_quantity">Quantity</td>
+                                    <td class="_principal">Principal</td>
+                                    <td class="_interest">Interest</td>
+                                    <td class="_selling">Selling Price</td>
+                                    <td class="_available">Available</td>
+                                    <td class="_pavailable">%</td>
+                                    <td class="_quantitysold">Quantity Sold</td>
+                                    <td class="_pquantitysold">%</td>
+                                    <td class="_sales">Sales</td>
+                                    <td class="_psales">%</td>
+                                    <td class="_tsales">Target Sales</td>
+                                    <td class="_profit">Projected Profit</td>
                                 </tr>
                             </thead>
                             <tbody id="datatable">
@@ -157,7 +221,6 @@
     <script src="/javascripts/connection.js"></script>
     <script src="/javascripts/search.js"></script>
     <script src="/javascripts/analytics.js"></script>
-
 </body>
 
 </html>

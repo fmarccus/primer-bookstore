@@ -35,209 +35,247 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
 
+        .bg {
+            max-width: 100%;
+            max-height: 100%;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            overflow: auto;
+            position: fixed;
+            right: 0;
+            top: 0;
+            -o-object-fit: contain;
+            object-fit: contain;
+            background-image: url("/images/gradient3.jpg");
+            background-position: center;
+
+            background-size: cover;
+        }
+    </style>
 
 </head>
 
 <body>
+    <div class="bg">
+        <!-- Title bar -->
+        <section class="mt-3">
+            <div class="container">
+                <br>
+                <a href="admin.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
+                        id="icon_logos"></i>PRIMER BOOKSTORE</a>
+            </div>
+        </section>
+        <!-- End of Title bar -->
 
-    <!-- Title bar -->
-    <section class="mt-3">
-        <div class="container">
-            <br>
-            <a href="admin.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
-                    id="icon_logos"></i>PRIMER BOOKSTORE</a>
-        </div>
-    </section>
-    <!-- End of Title bar -->
+        <!-- Login Form -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-12 mx-auto mt-5 mb-5">
+                        <div class="card text-left shadow">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div id="login_icon" class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
 
-    <!-- Login Form -->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-sm-12 mx-auto mt-5 mb-5">
-                    <div class="card text-left shadow">
-                        <div class="card-body">
-                            <div class="row">
-                                <div id="login_icon" class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            
-                                        </div>
-                                        <div class="col-md-12">
-                                            <img class="card-img" id="register" src="/images/reg.jpg">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <p class="text-center">Primer Bookstore is all about finding the next great
-                                                read. With over a hundred
-                                                thousand
-                                                titles across multiple genres—you'll never run out of stories. Visit one
-                                                of our bookstores in
-                                                the Philippines.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div id="login_div" class="main-div">
-                                            <h4 class="card-title text-center fw-bold" style="color: #25476d;">LOGIN
-                                            </h4>
-                                            <div class="col-md-12 mb-3"><i
-                                                    class="fas fa-envelope-open-text text-primary me-2"></i> Email
-                                                <div class="form-group">
-                                                    <input type="text" name="email_field" id="email_field"
-                                                        class="form-control shadow-none"
-                                                        placeholder="example123@gmail.com" aria-describedby="helpId"
-                                                        required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 mb-4"><i
-                                                    class="fas fa-lock text-primary me-2"></i>Password
-                                                <div class="form-group">
-                                                    <input type="password" name="password_field" id="password_field"
-                                                        class="form-control shadow-none" placeholder=""
-                                                        aria-describedby="helpId" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="d-grid col-md-12 mb-2">
-                                                <button class="btn btn-create btn-sm" style="background-color: #25476d; color: white;" onclick="login()">Login</button>
-                                            </div>
-
-                                            <div class="d-grid col-md-12 mb-2"><a button class="btn btn-sm" style="background-color: rgb(223, 223, 223);"
-                                                    href="/registration.html">Create New Account</a>
                                             </div>
                                             <div class="col-md-12">
-                                                <p class="text-muted text-small text-center">or</p>
+                                                <img class="card-img" id="register" src="/images/reg.jpg">
                                             </div>
-                                            <div class="d-grid col-md-12 mb-3">
-                                                <button class="btn btn-danger btn-sm" onclick="googleSignIn()"><i
-                                                        class="fab fa-google me-1"></i>Sign in with
-                                                    Google</button>
+                                            <div class="col-md-12">
+                                                <p class="text-center">Primer Bookstore is all about finding the next
+                                                    great
+                                                    read. With over a hundred
+                                                    thousand
+                                                    titles across multiple genres—you'll never run out of stories. Visit
+                                                    one
+                                                    of our bookstores in
+                                                    the Philippines.
+                                                </p>
                                             </div>
-
-                                            <p class="margin-t mt-5 text-whitesmoke text-center"
-                                                style="color: rgb(88, 88, 88);"><small> PRIMER BOOKSTORE &copy;
-                                                    2021</small> </p>
                                         </div>
                                     </div>
 
-                                    <div id="user_div" class="loggedin-div text-center">
-                                        <h4 id="user_para"></h4>
-                                        <hr>
-                                        <ul uk-accordion class="accordion" style="position: inherit;">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div id="login_div" class="main-div">
+                                                <h4 class="card-title text-center fw-bold" style="color: #25476d;">LOGIN
+                                                </h4>
+                                                <div class="col-md-12 mb-3"><i
+                                                        class="fas fa-envelope-open-text text-primary me-2"></i> Email
+                                                    <div class="form-group">
+                                                        <input type="text" name="email_field" id="email_field"
+                                                            class="form-control shadow-none"
+                                                            placeholder="example123@gmail.com" aria-describedby="helpId"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 mb-4"><i
+                                                        class="fas fa-lock text-primary me-2"></i>Password
+                                                    <div class="form-group">
+                                                        <input type="password" name="password_field" id="password_field"
+                                                            class="form-control shadow-none" placeholder=""
+                                                            aria-describedby="helpId" required>
+                                                    </div>
+                                                </div>
 
-                                            <li class="uk-open">
-                                                <a class="uk-accordion-title" href="employees.html"><i
-                                                        class="fas fa-users text-primary me-3"></i>Manage Employees</a>
-                                                <div class="uk-accordion-content">
-                                                    <p><a href="employees.html">Go to EMPLOYEES</a>
-                                                        <br>
-                                                        Manage the Employees of Primer Bookstore by adding, modifying,
-                                                        or
-                                                        deleting their data in efficient manner.
-                                                    </p><br>
+                                                <div class="d-grid col-md-12 mb-2">
+                                                    <button class="btn btn-create btn-sm"
+                                                        style="background-color: #25476d; color: white;"
+                                                        onclick="login()">Login</button>
                                                 </div>
-                                            </li>
-                                            <li>
-                                                <a class="uk-accordion-title" href="orders.html"><i
-                                                        class="fas fa-shopping-cart me-3 text-primary"></i>Pending
-                                                    Orders</a>
-                                                <div class="uk-accordion-content">
-                                                    <p><a href="orders.html">Go to ORDERS</a>
-                                                        <br>
-                                                        Keep track of the current items or products that are ordered by
-                                                        the
-                                                        bookstore.
-                                                    </p><br>
+
+                                                <div class="d-grid col-md-12 mb-2"><a button class="btn btn-sm"
+                                                        style="background-color: rgb(223, 223, 223);"
+                                                        href="/registration.html">Create New Account</a>
                                                 </div>
-                                            </li>
-                                            <li>
-                                                <a class="uk-accordion-title" href="inventories.html"><i
-                                                        class="fas fa-boxes me-3 text-primary"></i>Inventory</a>
-                                                <div class="uk-accordion-content">
-                                                    <p><a href="inventories.html">Go to INVENTORY</a>
-                                                        <br>
-                                                        Check the current items or equipment in the inventory to examine
-                                                        its
-                                                        price, quantity,
-                                                        and projected profit.
-                                                    </p><br>
+                                                <div class="col-md-12">
+                                                    <p class="text-muted text-small text-center">or</p>
                                                 </div>
-                                            </li>
-                                            <li>
-                                                <a class="uk-accordion-title" href="inventories.html"><i
-                                                        class="fas fa-chart-bar me-3 text-primary"></i>Sales Analysis
-                                                    Report</a>
-                                                <div class="uk-accordion-content">
-                                                    <p><a href="analytics.html">Go to Sales Analysis Report</a>
-                                                        <br>
-                                                        Shows an overview of the state of the sales activities within
-                                                        the
-                                                        bookstore.
-                                                    </p><br>
+                                                <div class="d-grid col-md-12 mb-3">
+                                                    <button class="btn btn-danger btn-sm" onclick="googleSignIn()"><i
+                                                            class="fab fa-google me-1"></i>Sign in with
+                                                        Google</button>
                                                 </div>
-                                            </li>
-                                            <li>
-                                                <a class="uk-accordion-title" href="orders.html"><i
-                                                        class="fas fa-dollar-sign me-3 text-primary"></i>Point of
-                                                    Sales</a>
-                                                <div class="uk-accordion-content">
-                                                    <p><a href="pos.html">Go to POINT OF SALES</a>
-                                                        <br>
-                                                        Records the products ordered by the customer
-                                                    </p><br>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a class="uk-accordion-title" href="orders.html"><i
-                                                        class="fas fa-history me-3 text-primary"></i>Sales History</a>
-                                                <div class="uk-accordion-content">
-                                                    <p><a href="sales.html">Go to SALES HISTORY</a>
-                                                        <br>
-                                                        Display all the purchases made by customers of Primer Bookstore
-                                                    </p><br>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a class="uk-accordion-title" href="tasks.html"><i
-                                                        class="fas fa-tasks me-3 text-primary"></i>Tasks/Meetings</a>
-                                                <div class="uk-accordion-content">
-                                                    <p><a href="tasks.html">Go to TASKS/MEETINGS</a>
-                                                        <br>
-                                                        Create new tasks and other important business meeting to keep
-                                                        track
-                                                        of the important activities in the organization.
-                                                    </p><br>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="col-md-12 d-grid mt-5">
-                                            <button class="btn btn-danger btn-sm mb-2"
-                                                onclick="logout()">Logout</button>
+
+                                                <p class="margin-t mt-5 text-whitesmoke text-center"
+                                                    style="color: rgb(88, 88, 88);"><small> PRIMER BOOKSTORE &copy;
+                                                        2021</small> </p>
+                                            </div>
                                         </div>
 
+                                        <div id="user_div" class="loggedin-div text-center">
+                                            <h4 id="user_para"></h4>
+                                            <hr>
+                                            <ul uk-accordion class="accordion" style="position: inherit;">
+
+                                                <li class="uk-open">
+                                                    <a class="uk-accordion-title" href="employees.html"><i
+                                                            class="fas fa-users text-primary me-3"></i>Manage
+                                                        Employees</a>
+                                                    <div class="uk-accordion-content">
+                                                        <p><a href="employees.html">Go to EMPLOYEES</a>
+                                                            <br>
+                                                            Manage the Employees of Primer Bookstore by adding,
+                                                            modifying,
+                                                            or
+                                                            deleting their data in efficient manner.
+                                                        </p><br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a class="uk-accordion-title" href="orders.html"><i
+                                                            class="fas fa-shopping-cart me-3 text-primary"></i>Pending
+                                                        Orders</a>
+                                                    <div class="uk-accordion-content">
+                                                        <p><a href="orders.html">Go to ORDERS</a>
+                                                            <br>
+                                                            Keep track of the current items or products that are ordered
+                                                            by
+                                                            the
+                                                            bookstore.
+                                                        </p><br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a class="uk-accordion-title" href="inventories.html"><i
+                                                            class="fas fa-boxes me-3 text-primary"></i>Inventory</a>
+                                                    <div class="uk-accordion-content">
+                                                        <p><a href="inventories.html">Go to INVENTORY</a>
+                                                            <br>
+                                                            Check the current items or equipment in the inventory to
+                                                            examine
+                                                            its
+                                                            price, quantity,
+                                                            and projected profit.
+                                                        </p><br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a class="uk-accordion-title" href="inventories.html"><i
+                                                            class="fas fa-chart-bar me-3 text-primary"></i>Sales
+                                                        Analysis
+                                                        Report</a>
+                                                    <div class="uk-accordion-content">
+                                                        <p><a href="analytics.html">Go to Sales Analysis Report</a>
+                                                            <br>
+                                                            Shows an overview of the state of the sales activities
+                                                            within
+                                                            the
+                                                            bookstore.
+                                                        </p><br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a class="uk-accordion-title" href="orders.html"><i
+                                                            class="fas fa-dollar-sign me-3 text-primary"></i>Point of
+                                                        Sales</a>
+                                                    <div class="uk-accordion-content">
+                                                        <p><a href="pos.html">Go to POINT OF SALES</a>
+                                                            <br>
+                                                            Records the products ordered by the customer
+                                                        </p><br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a class="uk-accordion-title" href="orders.html"><i
+                                                            class="fas fa-history me-3 text-primary"></i>Sales
+                                                        History</a>
+                                                    <div class="uk-accordion-content">
+                                                        <p><a href="sales.html">Go to SALES HISTORY</a>
+                                                            <br>
+                                                            Display all the purchases made by customers of Primer
+                                                            Bookstore
+                                                        </p><br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a class="uk-accordion-title" href="tasks.html"><i
+                                                            class="fas fa-tasks me-3 text-primary"></i>Tasks/Meetings</a>
+                                                    <div class="uk-accordion-content">
+                                                        <p><a href="tasks.html">Go to TASKS/MEETINGS</a>
+                                                            <br>
+                                                            Create new tasks and other important business meeting to
+                                                            keep
+                                                            track
+                                                            of the important activities in the organization.
+                                                        </p><br>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="col-md-12 d-grid mt-5">
+                                                <button class="btn btn-danger btn-sm mb-2"
+                                                    onclick="logout()">Logout</button>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-
             </div>
-        </div>
-    </section>
-    <!--End of Register Form -->
-    <br><br><br>
-    <!-- End Login Form -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script src="/javascripts/authentication.js"></script>
-    <script src="/javascripts/login.js"></script>
+        </section>
+        <!--End of Register Form -->
+        <br><br><br>
+        <!-- End Login Form -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <script src="/javascripts/authentication.js"></script>
+        <script src="/javascripts/login.js"></script>
 
-
+    </div>
 
 </body>
 
