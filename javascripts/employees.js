@@ -34,8 +34,7 @@ formdata.on('submit', (e) => {
 //retrieve records
 function render(doc) {
     tabledata.append(`<tr id="${doc.id}"> 
-    <td><a class="btn btn-sm btn-light" name="update" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
-    <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
+    <td><a class="btn btn-sm btn-light" name="update" href ="javascript:void(0)" id="${doc.id}">Select</a> <a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().lastname}</td>
     <td>${doc.data().firstname}</td>
     <td>${doc.data().middlename}</td>
@@ -126,3 +125,23 @@ db.collection('employees').orderBy('lastname').onSnapshot(snapshot => {
         }
     })
 })
+
+$(function () {
+    var $chk = $("#grpChkBox input:checkbox");
+    var $tbl = $("#myTable");
+    var $tblhead = $("#myTable td");
+
+    $chk.prop('checked', true);
+
+    $chk.click(function () {
+        var colToHide = $tblhead.filter("." + $(this).attr("name"));
+        var index = $(colToHide).index();
+        $tbl.find('tr :nth-child(' + (index + 1) + ')').toggle();
+    });
+
+    $("#_all").click(function () {
+        $tbl.toggle();
+        
+    })
+});
+

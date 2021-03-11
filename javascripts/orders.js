@@ -56,11 +56,10 @@ formdata.on('submit', (e) => {
 //retrieves documents
 function render(doc) {
     datatable.append(`<tr id="${doc.id}">
-    <td><a class="btn btn-sm btn-light" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
-    <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
+    <td><a class="btn btn-sm btn-light" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a>
+    <a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().title}</td>
     <td>${doc.data().author}</td>
-    
     <td>${parseFloat(doc.data().interest).toFixed(2)}</td>
     <td>${doc.data().delivery_address}</td>
     <td>${doc.data().supplier}</td>
@@ -234,3 +233,23 @@ db.collection('orders').orderBy('title').onSnapshot(snapshot => {
         }
     })
 })
+
+$(function () {
+    var $chk = $("#grpChkBox input:checkbox");
+    var $tbl = $("#myTable");
+    var $tblhead = $("#myTable td");
+
+    $chk.prop('checked', true);
+
+    $chk.click(function () {
+        var colToHide = $tblhead.filter("." + $(this).attr("name"));
+        var index = $(colToHide).index();
+        $tbl.find('tr :nth-child(' + (index + 1) + ')').toggle();
+    });
+
+    $("#_all").click(function () {
+        $tbl.toggle();
+        
+    })
+});
+

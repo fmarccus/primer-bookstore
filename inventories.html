@@ -257,6 +257,57 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
+                                        <div class="col-md-6 me-auto">
+                                            <div id="grpChkBox" class="my-2">
+                                                <!-- Example single danger button -->
+                                                <div class="btn-group dropend" id="display_table">
+                                                    <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Show/hide columns
+                                                    </button>
+                                                    <ul class="dropdown-menu" id="hide_show">
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_events" type="checkbox"> Events</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_title" type="checkbox"> Title</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_author" type="checkbox"> Author</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_isbn" type="checkbox"> ISBN</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_genre" type="checkbox"> Genre</a></li>
+
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_publication" type="checkbox"> Publication
+                                                                Date</a></li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_booksize" type="checkbox"> Book Size</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_delivery" type="checkbox"> Delivery
+                                                                Address</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_supplier" type="checkbox"> Supplier</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_contact" type="checkbox"> Contact</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_date" type="checkbox"> Date of Arrival</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item"><input class="form-check-input"
+                                                                    id="_all" type="checkbox"> All</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-md-6 ms-auto mb-3"> <input type="search"
                                                 class="form-control shadow-none" name="myInput" id="myInput"
                                                 placeholder="Search...">
@@ -268,17 +319,17 @@
                                             <thead class="thead-inverse"
                                                 style="background-color: #25476D; color: #ffffff;">
                                                 <tr>
-                                                    <td colspan="2">Events</td>
-                                                    <td>Title</td>
-                                                    <td>Author</td>
-                                                    <td>ISBN</td>
-                                                    <td>Genre</td>
-                                                    <td>Publication Date</td>
-                                                    <td>Book Size</td>
-                                                    <td>Delivery Address</td>
-                                                    <td>Supplier</td>
-                                                    <td>Contact</td>
-                                                    <td>Date of Arrival</td>
+                                                    <td class="_events">Events</td>
+                                                    <td class="_title">Title</td>
+                                                    <td class="_author">Author</td>
+                                                    <td class="_isbn">ISBN</td>
+                                                    <td class="_genre">Genre</td>
+                                                    <td class="_publication">Publication Date</td>
+                                                    <td class="_booksize">Book Size</td>
+                                                    <td class="_delivery">Delivery Address</td>
+                                                    <td class="_supplier">Supplier</td>
+                                                    <td class="_contact">Contact</td>
+                                                    <td class="_date">Date of Arrival</td>
                                                 </tr>
                                             </thead>
                                             <tbody id="datatable">

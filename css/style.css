@@ -8,11 +8,16 @@
 table.table-hover tbody tr:hover {
     background-color: #cfe9ff; 
 }
-
-
-
+#hide_show {
+    font-size: 14px;
+}
 .form-control {
     font-size: 14px;
+    
+} .form-control:focus {
+    border-color: #245379;
+} .form-select:focus {
+    border-color: #000000;
 }
 
 #brand {
@@ -51,8 +56,16 @@ a {
     background-color: #25476D;
     color: #ffffff;
 } .btn-create:hover {
-    background-color: #25476D;
+    background-color: #1b3b5f;
     color: rgb(196, 203, 218);
+}
+.btn-success {
+    background-color: rgb(48, 131, 6);
+    color: rgb(255, 255, 255);
+}
+.btn-success:hover {
+    background-color: rgb(10, 161, 78);
+    color: rgb(218, 211, 211);
 }
 /* for SELECT buttons in tables*/
 .btn-light {

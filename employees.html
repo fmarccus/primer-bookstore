@@ -249,37 +249,81 @@
             </div>
             <div class="col-md-8">
                 <!--Employee List-->
-                <section class="mt-4 mb-5">
+                <section class="mt-4">
                     <div class="row">
-                        <div class="col-md-12 text-truncate">
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-6 ms-auto mb-3"><input id="myInput"
-                                                class="form-control shadow-none" type="text" placeholder="Search...">
+                                        <div class="col-md-6 me-auto">
+                                            <div id="grpChkBox" class="my-2">
+                                                <!-- Example single danger button -->
+                                                <div class="btn-group dropend" id="display_table">
+                                                    <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Show/hide columns
+                                                    </button>
+                                                    <ul class="dropdown-menu" id="hide_show">
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_events" type="checkbox"> Events</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_lastname" type="checkbox"> Last Name</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_firstname" type="checkbox"> First Name</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_middlename" type="checkbox"> Middle Name</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_age" type="checkbox"> Age</a> </li>
+
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_sex" type="checkbox"> Sex</a></li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_nationality" type="checkbox"> Nationality</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_job" type="checkbox"> Job Title</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_salary" type="checkbox"> Salary</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item"><input class="form-check-input"
+                                                                    id="_all" type="checkbox"> All</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 ms-auto mb-3"> <input type="search"
+                                                class="form-control shadow-none" name="myInput" id="myInput"
+                                                placeholder="Search...">
                                         </div>
                                     </div>
                                     <div class="table-responsive">
                                         <table id="myTable"
-                                            class="table table-bordered table-hover table-sm text-center">
+                                            class="table table-bordered table-hover table-sm text-center text-truncate">
                                             <thead class="thead-inverse"
                                                 style="background-color: #25476D; color: #ffffff;">
                                                 <tr>
-                                                    <td colspan="2">Actions</td>
-                                                    <td>Last Name</td>
-                                                    <td>First Name</td>
-                                                    <td>Middle Name</td>
-                                                    <td>Age</td>
-                                                    <td>Sex</td>
-                                                    <td>Nationality</td>
-                                                    <td>Job Title</td>
-                                                    <td>Salary</td>
+                                                    <td class="_events">Events</td>
+                                                    <td class="_lastname">Last Name</td>
+                                                    <td class="_firstname">First Name</td>
+                                                    <td class="_middlename">Middle Name</td>
+                                                    <td class="_age">Age</td>
+                                                    <td class="_sex">Sex</td>
+                                                    <td class="_nationality">Nationality</td>
+                                                    <td class="_job">Job Title</td>
+                                                    <td class="_salary">Salary</td>
+
                                                 </tr>
                                             </thead>
                                             <tbody id="tabledata">
 
                                             </tbody>
-
                                         </table>
                                     </div>
                                 </div>
@@ -299,8 +343,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/connection.js"></script>
-    <script src="/javascripts/employees.js"></script>
     <script src="/javascripts/search.js"></script>
+    <script src="/javascripts/employees.js"></script>
 
 
 </body>

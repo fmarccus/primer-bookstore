@@ -280,7 +280,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12 text-end">
-                                                <button type="button" class="btn btn-success btn-sm float-start"
+                                                <button type="button" class="btn btn-light btn-sm float-start"
                                                     id="to_inventory">Send to
                                                     Inventory</button>
                                                 <button type="button" id="update" class="btn btn-sm btn-light">Save
@@ -302,30 +302,83 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
+                                        <div class="col-md-6 me-auto">
+                                            <div id="grpChkBox" class="my-2">
+                                                <!-- Example single danger button -->
+                                                <div class="btn-group dropend" id="display_table">
+                                                    <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Show/hide columns
+                                                    </button>
+                                                    <ul class="dropdown-menu" id="hide_show">
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_events" type="checkbox"> Events</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_title" type="checkbox"> Title</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_author" type="checkbox"> Author</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_interest" type="checkbox"> Interest</a>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_delivery" type="checkbox"> Delivery</a>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_supplier" type="checkbox"> Supplier</a>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_contact" type="checkbox"> Contact</a>
+                                                        </li>
+
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_date" type="checkbox"> Date</a>
+                                                        </li>
+
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_amount" type="checkbox"> Amount</a>
+                                                        </li>
+
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_quantity" type="checkbox"> Quantity</a>
+                                                        </li>
+
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    name="_total" type="checkbox"> Total</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"><input class="form-check-input"
+                                                                    id="_all" type="checkbox"> All</a>
+                                                        </li>
+
+
+
+                                                    </ul>
+                                                </div>
+                                                
+
+                                            </div>
+                                        </div>
                                         <div class="col-md-6 ms-auto mb-3"> <input type="search"
                                                 class="form-control shadow-none" name="myInput" id="myInput"
                                                 placeholder="Search...">
                                         </div>
                                     </div>
-
                                     <div class="table-responsive">
                                         <table id="myTable"
                                             class="table table-bordered table-hover table-sm text-center text-truncate">
                                             <thead class="thead-inverse"
                                                 style="background-color: #25476D; color: #ffffff;">
                                                 <tr>
-                                                    <td colspan="2">Events</td>
-                                                    <td>Title</td>
-                                                    <td>Author</td>
-
-                                                    <td>Interest</td>
-                                                    <td>Delivery Address</td>
-                                                    <td>Supplier</td>
-                                                    <td>Contact</td>
-                                                    <td>Date</td>
-                                                    <td>Amount</td>
-                                                    <td>Quantity</td>
-                                                    <td>Total</td>
+                                                    <td class="_events">Events</td>
+                                                    <td class="_title">Title</td>
+                                                    <td class="_author">Author</td>
+                                                    <td class="_interest">Interest</td>
+                                                    <td class="_delivery">Delivery Address</td>
+                                                    <td class="_supplier">Supplier</td>
+                                                    <td class="_contact">Contact</td>
+                                                    <td class="_date">Date</td>
+                                                    <td class="_amount">Amount</td>
+                                                    <td class="_quantity">Quantity</td>
+                                                    <td class="_total">Total</td>
                                                 </tr>
                                             </thead>
                                             <tbody id="datatable">
